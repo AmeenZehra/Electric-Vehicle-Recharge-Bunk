@@ -1,0 +1,151 @@
+/* Reset default styles for body and html */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif; /* Use Roboto font */
+  transition: background-color 0.5s, color 0.5s; /* Smooth transition for theme switch */
+}
+
+/* Default (light) theme styles */
+body {
+  background-color: #f8f9fa; /* Light background */
+  color: #212529; /* Dark text */
+}
+
+/* Background for the entire page */
+.bg {
+  background-image: url('bg.jpg'); /* Background image */
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; /* Cover the entire area */
+}
+
+/* Dark theme styles */
+body.dark {
+  background-color: #343a40; /* Dark background */
+  color: #f8f9fa; /* Light text */
+}
+
+.jumbotron {
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+  color: white; /* White text */
+  padding: 200px; /* Padding around content */
+  border-radius: 0.5rem; /* Rounded corners */
+}
+
+/* Footer styling */
+.footer {
+  background-color: #343a40; /* Dark background */
+  color: white; /* White text */
+  text-align: center; /* Centered text */
+  padding: 10px; /* Increased padding */
+  position: relative; /* Changed to relative for proper layout */
+  bottom: 0;
+  width: 100%;
+}
+
+/* Login container styling */
+.login-container {
+  background: rgba(255, 255, 255, 0.9); /* Slightly more opaque background */
+  padding: 2rem; /* Padding inside container */
+  border-radius: 0.5rem; /* Rounded corners */
+  margin-top: 10%; /* Space from top */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Register container styling (if needed) */
+.register-container {
+  background: rgba(255, 255, 255, 0.9); /* Consistent styling with login */
+  padding: 2rem; /* Padding inside container */
+  border-radius: 0.7rem; /* Rounded corners */
+  margin-top: 5%; /* Space from top */
+}
+
+/* General container margin */
+.container {
+  margin-top: 50px; /* Space from top for the container */
+}
+
+/* Map styling (if applicable) */
+#map {
+  height: 500px; /* Fixed height */
+  width: 100%; /* Full width */
+}
+
+/* Search container styling */
+.search-container {
+  margin-right: 20px; /* Right margin */
+}
+
+/* Flexbox row to ensure full height */
+.row {
+  height: 100%;
+}
+
+/* Map container positioning */
+.map-container {
+  position: absolute; /* Absolute positioning */
+  top: 77px; /* Distance from top */
+  right: 10px; /* Distance from right */
+  width: 75%; /* Width of the map */
+  height: 500px; /* Fixed height */
+}
+
+/* Search container positioning */
+.search-container {
+  position: absolute; /* Absolute positioning */
+  top: 77px; /* Distance from top */
+  left: 10px; /* Distance from left */
+  width: 20%; /* Width for search area */
+}
+
+/* Additional styling for form inputs */
+input[type="email"], input[type="password"] {
+  border: 1px solid #ced4da; /* Border color */
+  border-radius: 0.25rem; /* Rounded corners */
+}
+
+/* Style for invalid feedback messages */
+.invalid-feedback {
+  display: none; /* Initially hidden */
+}
+
+/* Show invalid feedback when inputs are invalid */
+.is-invalid ~ .invalid-feedback {
+  display: block; /* Show when invalid */
+  font-size: 0.875rem; /* Smaller text size */
+  color: #dc3545; /* Bootstrap danger color */
+}
+
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.marquee-content {
+  display: inline-block;
+  padding-left: 100%; /* Start position */
+  animation: marquee 20s linear infinite; /* Increase duration to 40s for very slow speed */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}

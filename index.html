@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EV Charging Slot Booking</title>
+  <script src="auth.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      transition: background-color 0.5s, color 0.5s;
+    }
+    /* Light theme */
+    body.light {
+      background-color: white;
+      color: black;
+    }
+    /* Dark theme */
+    body.dark {
+      background-color: #333;
+      color: white;
+    }
+    .marquee-content {
+      display: inline-block;
+      white-space: nowrap;
+      animation: marquee 10s linear infinite;
+    }
+    @keyframes marquee {
+      from { transform: translateX(100%); }
+      to { transform: translateX(-100%); }
+    }
+  </style>
+</head>
+<body class="light"> <!-- Default to light theme -->
+  <div class="bg">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">EV Charging</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" id="theme-toggle" href="#" style="cursor: pointer;">Switch Theme</a> <!-- Theme switch button -->
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="user-name" href="#"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="login-link" href="user_login.html">User Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="login-link" href="admin_login.html">Admin Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="register-link" href="user_register.html">User Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="login-link" href="admin_register.html">Admin Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="logout-link" href="#" style="display: none;">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="jumbotron text-center">
+      <h1 class="display-4">Welcome to EV Charging Slot Booking</h1>
+      <p class="lead">Find and book charging slots for your electric vehicle easily.</p>
+      <button class="btn btn-primary btn-lg" id="findChargingStationsBtn" role="button">Find Charging Stations</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <center>
+      
+      <div class="marquee">
+        <div class="marquee-content">Developed by Ameen Zehra</div>
+      </div>
+    </center>
+  </footer>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', function() {
+      document.body.classList.toggle('dark');
+      document.body.classList.toggle('light');
+    });
+
+    document.getElementById('findChargingStationsBtn').addEventListener('click', function() {
+        // Check if the user is logged in
+        const isLoggedIn = false; // Replace this with your actual authentication check
+        if (!isLoggedIn) {
+            // Redirect to user login if not logged in
+            window.location.href = 'user_login.html';
+        } else {
+            // Redirect to search page if logged in
+            window.location.href = 'search.html';
+        }
+    });
+  </script>
+</body>
+</html>
